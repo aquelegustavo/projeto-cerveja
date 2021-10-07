@@ -12,7 +12,7 @@ import Profile from "./pages/profile";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import ProtectedRoute from "./auth/protected-route";
-import Loading from "./components/loading";
+import Loading from "./components/loading/loading";
 
 function App() {
   const { isLoading } = useAuth0();
