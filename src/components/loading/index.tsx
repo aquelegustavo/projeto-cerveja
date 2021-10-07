@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./loading.module.scss";
 
-function Loading() {
+function LoadingComponent() {
   return (
     <div className={styles.container}>
       <div className={styles.loader}>
@@ -19,4 +19,4 @@ function Loading() {
   );
 }
 
-export default Loading;
+export default LoadingComponent;

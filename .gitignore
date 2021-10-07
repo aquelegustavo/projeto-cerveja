@@ -24,3 +24,4 @@ yarn-error.log*
 
 # Uso interno
 /old
+/auth

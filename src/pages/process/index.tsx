@@ -1,11 +1,14 @@
 import React from "react";
 
-import Process from "../../components/process";
+import ProcessComponent from "../../components/process";
+import useApi from "../../services/api";
 
 function ProcessPage() {
+  useApi("/process/status");
+
   return (
     <>
-      <Process />
+      <ProcessComponent />
     </>
   );
 }

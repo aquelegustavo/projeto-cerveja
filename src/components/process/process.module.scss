@@ -1,15 +1,4 @@
-.image {
-  color: tomato;
-
-  .draw {
-    color: green;
-    #Saida {
-      -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-      filter: blur(5px);
-    }
-  }
-}
 .disabled {
-  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-  filter: blur(5px);
+  -webkit-filter: grayscale(100%) blur(2px); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%) blur(2px);
 }
