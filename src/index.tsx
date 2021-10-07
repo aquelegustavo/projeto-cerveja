@@ -3,19 +3,17 @@ import ReactDOM from "react-dom";
 
 import App from "./App";
 
-import { Auth0Provider } from "@auth0/auth0-react";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
+
+import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Auth0Provider
-      domain="projeto-cerveja.us.auth0.com"
-      clientId="waxro5FqeAhi4RJB7ioAUVqmv84TcBeQ"
-      redirectUri={window.location.origin}
-    >
+  <Router>
+    <Auth0ProviderWithHistory>
       <App />
-    </Auth0Provider>
-  </React.StrictMode>,
+    </Auth0ProviderWithHistory>
+  </Router>,
   document.getElementById("root")
 );
 
