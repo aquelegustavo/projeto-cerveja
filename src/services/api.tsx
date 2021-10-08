@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect, useState } from "react";
 
 type Parameters = {
   method?: string;
@@ -7,34 +8,60 @@ type Parameters = {
   };
 };
 
-export default async function useApi(
-  requestUrl: string,
-  parameters: Parameters = {}
-) {
-  const baseUrl = process.env.REACT_APP_API_BASE_URL;
+type Response = {
+  data: null | any;
+  error: null | boolean;
+  loading: boolean;
+};
 
+function useApi(requestUrl: string, parameters: Parameters = {}) {
+  const [response, setResponse] = useState({
+    data: null,
+    error: null,
+    loading: true,
+  } as Response);
+
+  const baseUrl = process.env.REACT_APP_API_BASE_URL;
   const { getAccessTokenSilently } = useAuth0();
 
-  const token = await getAccessTokenSilently();
+  useEffect(() => {
+    setResponse({
+      data: null,
+      error: null,
+      loading: true,
+    });
 
-  if (parameters.headers) {
-    parameters.headers.Authorization = `Bearer ${token}`;
-  } else {
-    parameters.headers = {
-      Authorization: `Bearer ${token}`,
-    };
-  }
+    try {
+      getAccessTokenSilently().then(async (token) => {
+        if (parameters.headers) {
+          parameters.headers.Authorization = `Bearer ${token}`;
+        } else {
+          parameters.headers = {
+            Authorization: `Bearer ${token}`,
+          };
+        }
 
-  new Promise<void>((resolve, reject) => {
-    fetch(baseUrl + requestUrl, parameters)
-      .then((res) => res.json())
-      .then((result) => {
-        console.log("API result:", result);
-        resolve(result);
-      })
-      .catch(function (error) {
-        console.log("Erro no procedimento fetch: " + error);
-        reject(error);
+        const response = await fetch(baseUrl + requestUrl, parameters);
+        const json = await response.json();
+
+        console.log("RESULT:", json);
+        setResponse({
+          data: json,
+          error: false,
+          loading: false,
+        });
       });
-  });
+    } catch (e) {
+      console.error("erri>>>", e);
+      setResponse({
+        data: {},
+        error: false,
+        loading: false,
+      });
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  return response;
 }
+
+export default useApi;
