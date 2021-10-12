@@ -54,6 +54,11 @@ button {
   color: var(--gray-500);
 }
 
+a {
+  font: 500 1rem Inter, sans-serif;
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -75,4 +80,8 @@ h2 {
 
 button {
   cursor: pointer;
+}
+
+.wrapper {
+  flex: 1;
 }
