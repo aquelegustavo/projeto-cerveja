@@ -14,6 +14,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import ProtectedRoute from "./auth/protected-route";
 import Loading from "./components/loading";
 import ProcessPage from "./pages/process";
+import HeaderComponent from "./components/header";
 
 function App() {
   const { isLoading } = useAuth0();
@@ -23,12 +24,15 @@ function App() {
   }
 
   return (
-    <Switch>
-      <Route exact path="/" component={HomePage} />
-      <ProtectedRoute path="/process" component={ProcessPage} />
-      <ProtectedRoute path="/profile" component={Profile} />
-      <Route path="/logout" component={SignOut} />
-    </Switch>
+    <main>
+      <HeaderComponent />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <ProtectedRoute path="/process" component={ProcessPage} />
+        <ProtectedRoute path="/profile" component={Profile} />
+        <Route path="/logout" component={SignOut} />
+      </Switch>
+    </main>
   );
 }
 
