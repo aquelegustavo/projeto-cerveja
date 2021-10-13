@@ -17,7 +17,7 @@ function HomePage() {
       <Card className={`${styles.card} ${styles.full}`}>
         <h3>Produção</h3>
 
-        <div className={`${styles.chartContainer} box flex row`}>
+        <div className={`${styles.chartContainer} box flex row space-around`}>
           <Doughnut
             className={`${styles.chart} ${styles.small}`}
             data={doughnutData}
@@ -33,7 +33,7 @@ function HomePage() {
         </div>
       </Card>
 
-      <div className="box flex row">
+      <div className="box flex row space-around">
         <Card className={styles.card}>
           <h3>Temperatura (Cº)</h3>
 

@@ -1,0 +1,68 @@
+.card {
+  margin: 4rem auto;
+  padding: 2rem 4rem;
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.userInfo {
+  .imageContainer {
+    width: 10rem;
+    height: 10rem;
+    margin-right: 2rem;
+
+    img {
+      max-width: 100%;
+      border-radius: 100%;
+    }
+
+    .editButton {
+      bottom: 2rem;
+      left: 7rem;
+      background-color: var(--gray-100);
+    }
+  }
+
+  .userData {
+    margin-top: 2rem;
+
+    .item {
+      margin-top: 1rem;
+      button {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+.security {
+  .imageContainer {
+    width: 10rem;
+    max-width: 100%;
+    margin: 2rem 4rem 0 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .informations {
+    margin-top: 2rem;
+    max-width: 40%;
+
+    .item {
+      margin: 1rem 0 1rem 0;
+    }
+
+    .v2e {
+      h4 {
+        color: var(--green-500);
+      }
+      .activeButton {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

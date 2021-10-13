@@ -6,7 +6,7 @@ import styles from "./process.module.scss";
 function ProcessPage() {
   return (
     <>
-      <h3 className={styles.status}>Processo ativo</h3>
+      <h3 className={styles.status}>Produção ativa</h3>
       <div className={styles.container}>
         <ProcessComponent />
       </div>
