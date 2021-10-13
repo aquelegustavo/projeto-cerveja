@@ -13,7 +13,6 @@ $loader-keyframe: 1 / (length($loader-colors) * 2) * 100;
     z-index: 10;
     align-items: center;
     justify-content: center;
-    background: rgba($color: #fff, $alpha: 0.4);
 
     svg {
       animation: loader-turn $loader-duration-alt linear infinite;
