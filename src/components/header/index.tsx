@@ -7,10 +7,9 @@ import Icon from "@material-ui/core/Icon";
 
 import { links } from "./links";
 import { Link } from "react-router-dom";
-import { ButtonBase, IconButton } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import LoadingComponent from "../loading";
 import { useAuth0 } from "@auth0/auth0-react";
-import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 
 type User = {
   picture: string;
