@@ -24,7 +24,7 @@ type UseAuth0 = {
 };
 
 function HeaderComponent() {
-  const { user, isAuthenticated, isLoading }: UseAuth0 = useAuth0();
+  const { user, isLoading }: UseAuth0 = useAuth0();
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 

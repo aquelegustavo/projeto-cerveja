@@ -29,7 +29,7 @@ function App() {
       <Switch>
         <ProtectedRoute path="/process" component={ProcessPage} />
         <ProtectedRoute path="/profile" component={Profile} />
-        <ProtectedRoute path="/logout" component={SignOut} />
+        <Route path="/logout" component={SignOut} />
         <ProtectedRoute path="/" component={HomePage} />
       </Switch>
     </main>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { withAuthenticationRequired } from "@auth0/auth0-react";
+import LoadingComponent from "../components/loading";
 
 type Compo = {
   component: any;
@@ -9,7 +10,7 @@ type Compo = {
 const ProtectedRoute = ({ component, ...args }: Compo) => (
   <Route
     component={withAuthenticationRequired(component, {
-      onRedirecting: () => <h1>Protect carregando...</h1>,
+      onRedirecting: () => <LoadingComponent />,
     })}
     {...args}
   />
