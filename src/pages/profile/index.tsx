@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import LoadingComponent from "../../components/loading";
 
 type User = {
   picture: string;
@@ -17,8 +18,10 @@ const Profile = () => {
   const { user, isAuthenticated, isLoading }: UseAuth0 = useAuth0();
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <LoadingComponent />;
   }
+
+  console.log("User: ", user);
 
   return (
     <div>
