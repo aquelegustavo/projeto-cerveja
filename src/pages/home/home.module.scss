@@ -1,0 +1,36 @@
+.ribble {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 22rem;
+  z-index: -10;
+  background: var(--green-500);
+}
+
+.card {
+  padding: 2rem;
+  margin: 2rem;
+
+  &.full {
+    margin: 4rem;
+  }
+
+  .chartContainer {
+    margin-top: 2rem;
+  }
+
+  .chart {
+    &.small {
+      max-width: 22rem;
+      max-height: 22rem;
+    }
+
+    &.large {
+      width: 34rem !important;
+    }
+  }
+}
+
+.space {
+  height: 4rem;
+}
